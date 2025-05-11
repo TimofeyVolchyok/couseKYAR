@@ -10,7 +10,7 @@
     </departure>
     <departure>
         <route_number>205</route_number>
-        <destination>Санкт-Петербург</destination>
+        <destination>Петербург</destination>
         <departure_time>09:30</departure_time>
         <arrival_time>17:30</arrival_time>
         <available_seats>25</available_seats>
