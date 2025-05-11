@@ -34,6 +34,7 @@
 
     td {
       border-bottom: 5px solid lighten($primary-color, 60%);
+      text-align: center;
     }
 
     th {
@@ -41,6 +42,7 @@
       color: white;
       font-weight: bold;
       border-bottom: 2px solid darken($text-color, 0%);
+      text-align: center;
     }
 
     tbody tr:nth-child(even) {

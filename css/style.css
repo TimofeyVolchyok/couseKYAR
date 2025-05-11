@@ -399,12 +399,14 @@ img {
 }
 #timetable table td {
   border-bottom: 5px solid #cce5ff;
+  text-align: center;
 }
 #timetable table th {
   background-color: #004A99;
   color: white;
   font-weight: bold;
   border-bottom: 2px solid #333333;
+  text-align: center;
 }
 #timetable table tbody tr:nth-child(even) {
   background-color: #fff4d3;
