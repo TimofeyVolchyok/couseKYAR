@@ -1,0 +1,98 @@
+#timetable {
+    padding: 3rem 0;
+
+    .container {
+      @include container;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $primary-color;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: $box-shadow;
+      border-radius: $border-radius;
+      overflow: hidden; // Обрезаем углы таблицы
+
+      th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid lighten($secondary-color, 10%);
+        @media (max-width: 767px) {
+          padding: 8px 10px;
+          font-size: 0.8rem;
+        }
+      }
+
+      th {
+        background-color: $primary-color;
+        color: white;
+        font-weight: bold;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: lighten($secondary-color, 5%);
+      }
+      .buy-button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+    }
+
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      top: 0;
+      left: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      
+      /* Center the modal */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+      max-width: 500px;
+      border-radius: $border-radius;
+      position: relative; /* Necessary for the close button */
+    }
+    
+    /* The Close Button */
+    .close-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      padding: 5px;
+      cursor: pointer;
+    }
+    
+
+    .close-button:hover,
+    .close-button:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+      @media (max-width: 767px) {
+        display: block;
+        overflow-x: auto; // Add horizontal scrolling for smaller screens
+      }
+    }
+  }

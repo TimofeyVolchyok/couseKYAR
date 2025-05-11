@@ -1,0 +1,142 @@
+header {
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: $box-shadow;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a img {
+    max-height: 50px;
+  }
+
+  .desktop-nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+
+      li {
+        margin-right: 1.5rem;
+
+        a {
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+
+    div {
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      border-radius: 2px;
+      transition: all 0.3s linear;
+    }
+  }
+
+  .mobile-nav {
+    display: none; // Hidden by default
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    background-color: rgba($primary-color, 0.95); // Slightly darker and more opaque
+    padding: 1rem;
+    z-index: 100;
+    border-top: 1px solid rgba(white, 0.2); // Subtle border
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        margin: 0.75rem 0;
+        width: 100%; // Full width for each item
+        text-align: center; // Center the text
+
+        a {
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          padding: 0.75rem 1rem; // Add padding for click area
+          display: block; // Make the entire area clickable
+          border-radius: 5px; // Rounded corners
+
+          &:hover {
+            color: $accent-color;
+            background-color: rgba(white, 0.1); // Subtle hover background
+          }
+        }
+      }
+    }
+
+    &.active {
+      display: block;
+      animation: slideDown 0.3s ease; // Add a slide-down animation
+    }
+  }
+
+  // Keyframes for slide-down animation
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  // Tablet Styles (max-width: 768px)
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  // Desktop Styles (min-width: 1200px)
+  @media (min-width: 1200px) {
+    .desktop-nav {
+      display: block;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}

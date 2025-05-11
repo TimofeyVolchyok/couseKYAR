@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание - Автовокзал Минск</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+          <a href="index.html"><img src="../img/logo.svg" alt="Логотип Автовокзала Минск"></a>
+      
+          <nav class="desktop-nav">  <!-- Add class to differentiate -->
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="timetable.html">Расписание</a></li>
+              <li><a href="routes.html">Маршруты</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="news.html">Новости</a></li>
+              <li><a href="contact.html">Контакты</a></li>
+            </ul>
+          </nav>
+      
+          <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+      
+          <nav class="mobile-nav"> <!-- New mobile navigation -->
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="timetable.html">Расписание</a></li>
+              <li><a href="routes.html">Маршруты</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li><a href="news.html">Новости</a></li>
+              <li><a href="contact.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+    <main>
+        <section id="timetable">
+            <div class="container">
+                <h1>Расписание на сегодня</h1>
+                <table id="timetable-table">
+                    <thead>
+                        <tr>
+                            <th>Номер рейса</th>
+                            <th>Направление</th>
+                            <th>Время отправления</th>
+                            <th>Время прибытия</th>
+                            <th>Свободные места</th>
+                            <th>Цена</th>
+                            <th>Купить</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Здесь JavaScript будет добавлять строки -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                  <span class="close-button">&times;</span>
+                  <h2>Подтверждение покупки</h2>
+                  <p>Вы уверены, что хотите купить билет на этот рейс?</p>
+                  <button id="confirm-purchase" class="button primary">Подтвердить</button>
+              </div>
+          </div>
+        </section>
+
+       
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Автовокзал Минск</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+@mixin rounded-corners($radius: $border-radius) {
+    border-radius: $radius;
+  }
+
+  @mixin transition($property: all, $duration: 0.3s, $easing: ease-in-out) {
+    transition: $property $duration $easing;
+  }
+
+  @mixin button-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 12px 25px;
+    border: none;
+    @include rounded-corners;
+    @include transition;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @mixin container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+
+      /* @media (max-width: 768px) {
+          padding: 0 15px;
+      } */
+  }
+  @mixin tablet {
+    @media (min-width: $breakpoint-tablet) {
+      @content;
+    }
+  }
+
+  @mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }

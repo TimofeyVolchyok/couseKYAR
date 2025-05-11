@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <news>
+        <news_item>
+            <title>Новый рейс Минск - Гродно</title>
+            <date>2025-04-30</date>
+            <description>Открывается новый ежедневный рейс Минск - Гродно. Комфортабельный автобус, отправление в 10:00.</description>
+            <image>../img/news1.jpg</image>
+        </news_item>
+        <news_item>
+            <title>Акция: скидки на билеты в Варшаву</title>
+            <date>2025-04-29</date>
+            <description>Скидки до 20% на билеты в Варшаву при покупке онлайн до 5 мая!</description>
+            <image>../img/news2.jpg</image>
+        </news_item>
+        <news_item>
+            <title>Обновлен автобусный парк</title>
+            <date>2025-04-28</date>
+            <description>Автовокзал Минск приобрел новые современные автобусы для междугородних и международных рейсов.</description>
+            <image>../img/news3.jpg</image>
+        </news_item>
+        <news_item>
+            <title>Открытие нового кафе на автовокзале</title>
+            <date>2025-04-27</date>
+            <description>Приглашаем всех посетителей в новое уютное кафе на территории автовокзала! Широкий выбор блюд и напитков.</description>
+            <image>../img/news4.webp</image>
+        </news_item>
+        <news_item>
+            <title>Изменения в расписании рейса Минск - Брест</title>
+            <date>2025-04-26</date>
+            <description>Внимание! С 1 мая изменяется время отправления рейса Минск - Брест. Проверьте актуальное расписание на сайте.</description>
+            <image>../img/news5.jpg</image>
+        </news_item>
+        <news_item>
+            <title>Бесплатный Wi-Fi на территории автовокзала</title>
+            <date>2025-04-25</date>
+            <description>Теперь на всей территории автовокзала доступен бесплатный Wi-Fi для всех пассажиров.</description>
+            <image>../img/news6.jpg</image>
+        </news_item>
+    </news>
