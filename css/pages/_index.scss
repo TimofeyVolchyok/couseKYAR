@@ -72,7 +72,7 @@
 
     .container {
       @include container;
-      max-width: 1000px;
+      max-width: 80%;
     }
 
     h2 {
@@ -82,12 +82,16 @@
     }
 
     .route-list {
+      width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      @media (max-width:$breakpoint-tablet ) {
+        flex-direction: column;
+      }
     }
 
     .route-item {
-      width: 200px;
+      width: 400px;
       padding: 20px;
       border: 1px solid lighten($secondary-color, 10%);
       border-radius: $border-radius;

@@ -14,104 +14,107 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.send();
     }
 
-    // Модальное окно
-    const modal = document.getElementById('modal');
-    const confirmPurchaseBtn = document.getElementById('confirm-purchase');
-    let selectedRouteId = null;  
-    if (modal) {
-        modal.style.display = 'none'; 
+     // Модальное окно
+ const modal = document.getElementById('modal');
+ const confirmPurchaseBtn = document.getElementById('confirm-purchase');
+ let selectedRouteId = null;
 
-        
-        const span = document.getElementsByClassName("close-button")[0];
+ if (modal) {
+    modal.style.display = 'none';
 
-        
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
 
-      
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+    const span = document.getElementsByClassName("close-button")[0];
 
-        if (confirmPurchaseBtn) {
-            confirmPurchaseBtn.addEventListener('click', function () {
-                if (selectedRouteId) {
-                    
-                    alert('Покупка билета на рейс ' + selectedRouteId + ' подтверждена!');
 
-                    
-                    modal.style.display = "none";
-                    selectedRouteId = null; 
-                }
-            });
-        }
+    span.onclick = function () {
+       modal.style.display = "none";
     }
 
-    // Функция для отображения расписания
-    function displayTimetable(xml) {
-        var departures = xml.getElementsByTagName('departure');
-        var timetableTableBody = document.querySelector('#timetable-table tbody');
-    
-        if (!timetableTableBody) {
-            console.error("Элемент с id 'timetable-table tbody' не найден.");
-            return;
-        }
-    
-        timetableTableBody.innerHTML = ''; // Очищаем таблицу
-    
-        for (var i = 0; i < departures.length; i++) {
-            var departure = departures[i];
-    
-            var routeIdElement = departure.getElementsByTagName('route_id')[0];
-            var routeId = routeIdElement ? routeIdElement.textContent : 'N/A';
-    
-            var routeNumberElement = departure.getElementsByTagName('route_number')[0];
-            var routeNumber = routeNumberElement ? routeNumberElement.textContent : 'N/A';
-    
-            var destinationElement = departure.getElementsByTagName('destination')[0];
-            var destination = destinationElement ? destinationElement.textContent : 'Неизвестно';
-    
-            var departureTimeElement = departure.getElementsByTagName('departure_time')[0];
-            var departureTime = departureTimeElement ? departureTimeElement.textContent : 'Не указано';
-    
-            var arrivalTimeElement = departure.getElementsByTagName('arrival_time')[0];
-            var arrivalTime = arrivalTimeElement ? arrivalTimeElement.textContent : 'Не указано';
-    
-            var availableSeatsElement = departure.getElementsByTagName('available_seats')[0];
-            var availableSeats = availableSeatsElement ? availableSeatsElement.textContent : '0';
-    
-            var priceElement = departure.getElementsByTagName('price')[0];
-            var price = priceElement ? priceElement.textContent : 'Бесплатно';
-    
-    
-            var row = timetableTableBody.insertRow();
-            row.insertCell().textContent = routeNumber;
-            row.insertCell().textContent = destination;
-            row.insertCell().textContent = departureTime;
-            row.insertCell().textContent = arrivalTime;
-            row.insertCell().textContent = availableSeats;
-            row.insertCell().textContent = price;
-    
-            // Добавляем кнопку "Купить"
-            var buyCell = row.insertCell();
-            var buyButton = document.createElement('button');
-            buyButton.textContent = 'Купить';
-            buyButton.classList.add('button', 'primary', 'buy-button');  // Добавляем классы для стилизации
-            buyCell.appendChild(buyButton);
-    
-            // Обработчик события click для кнопки "Купить"
-            buyButton.addEventListener('click', function (event) {
-                event.preventDefault(); // Предотвращаем перезагрузку страницы
-                selectedRouteId = routeNumber;
-                if (modal) {
-                    modal.style.display = "flex";
-                }
-            });
-        }
+
+    window.onclick = function (event) {
+       if (event.target == modal) {
+          modal.style.display = "none";
+       }
     }
+
+    if (confirmPurchaseBtn) {
+       confirmPurchaseBtn.addEventListener('click', function () {
+          if (selectedRouteId) {
+
+             alert('Покупка билета на рейс ' + selectedRouteId + ' подтверждена!');
+
+
+             modal.style.display = "none";
+             selectedRouteId = null;
+          }
+       });
+    }
+ }
+
+ // Функция для отображения расписания
+ function displayTimetable(xml) {
+    var departures = xml.getElementsByTagName('departure');
+    var timetableTableBody = document.querySelector('#timetable-table tbody');
+
+    if (!timetableTableBody) {
+       console.error("Элемент с id 'timetable-table tbody' не найден.");
+       return;
+    }
+
+    timetableTableBody.innerHTML = ''; // Очищаем таблицу
+
+    for (var i = 0; i < departures.length; i++) {
+       var departure = departures[i];
+
+       var routeIdElement = departure.getElementsByTagName('route_id')[0];
+       var routeId = routeIdElement ? routeIdElement.textContent : 'N/A';
+
+       var routeNumberElement = departure.getElementsByTagName('route_number')[0];
+       var routeNumber = routeNumberElement ? routeNumberElement.textContent : 'N/A';
+
+       var destinationElement = departure.getElementsByTagName('destination')[0];
+       var destination = destinationElement ? destinationElement.textContent : 'Неизвестно';
+
+       var departureTimeElement = departure.getElementsByTagName('departure_time')[0];
+       var departureTime = departureTimeElement ? departureTimeElement.textContent : 'Не указано';
+
+       var arrivalTimeElement = departure.getElementsByTagName('arrival_time')[0];
+       var arrivalTime = arrivalTimeElement ? arrivalTimeElement.textContent : 'Не указано';
+
+       var availableSeatsElement = departure.getElementsByTagName('available_seats')[0];
+       var availableSeats = availableSeatsElement ? availableSeatsElement.textContent : '0';
+
+       var priceElement = departure.getElementsByTagName('price')[0];
+       var price = priceElement ? priceElement.textContent : 'Бесплатно';
+
+
+       var row = timetableTableBody.insertRow();
+       row.insertCell().textContent = routeNumber;
+       row.insertCell().textContent = destination;
+       row.insertCell().textContent = departureTime;
+       row.insertCell().textContent = arrivalTime;
+       row.insertCell().textContent = availableSeats;
+       row.insertCell().textContent = price;
+
+       // Добавляем кнопку "Купить"
+       var buyCell = row.insertCell();
+       var buyButton = document.createElement('button');
+       buyButton.textContent = 'Купить';
+       buyButton.classList.add('button', 'primary', 'buy-button');  // Добавляем классы для стилизации
+       buyCell.appendChild(buyButton);
+
+       
+       (function(routeNumber) {
+          buyButton.addEventListener('click', function (event) {
+             event.preventDefault(); 
+             selectedRouteId = routeNumber;
+             if (modal) {
+                modal.style.display = "flex";
+             }
+          });
+       })(routeNumber); 
+    }
+ }
 
     // Функция для отображения маршрутов
     function displayRoutes(xml) {
