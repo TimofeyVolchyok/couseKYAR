@@ -1,7 +1,23 @@
-@font-face {
-    font-family: NunitoSans;
-    src: url("../../fonts/NunitoSans-Italic-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Global font application */
+* {
+  font-family: 'Nunito Sans', sans-serif;
 }
-*{
-    font-family: NunitoSans;
+
+/* Optional:  Define specific weights/styles if needed */
+h1 {
+  font-family: 'Nunito Sans', sans-serif;
+ 
+}
+
+em {
+  font-family: 'Nunito Sans', sans-serif;
+  font-style: italic;
+}
+
+/* Example with specific italic and weight */
+.emphasized-text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
 }

@@ -17,13 +17,14 @@
     border-collapse: collapse;
     box-shadow: $box-shadow;
     border-radius: $border-radius;
-    overflow-x: auto;
+    overflow-x: auto; // Add horizontal scroll
 
     th,
     td {
       padding: 8px;
       text-align: left;
       font-size: 0.8rem;
+      white-space: nowrap; // Prevent text from wrapping to multiple lines
 
       @media (min-width: 768px) {
         padding: 12px 15px;
@@ -31,17 +32,17 @@
       }
     }
 
- 
     td {
-        border-bottom: 5px solid lighten($primary-color, 60%);
+      border-bottom: 5px solid lighten($primary-color, 60%);
     }
 
     th {
       background-color: $primary-color;
       color: white;
       font-weight: bold;
-      border-bottom: 2px solid darken($text-color, 0%); 
+      border-bottom: 2px solid darken($text-color, 0%);
     }
+
     tbody tr:nth-child(even) {
       background-color: lighten($accent-color, 40%);
     }
@@ -57,8 +58,13 @@
     }
 
     @media (max-width: 767px) {
-      th:nth-child(5),
-      td:nth-child(5) {
+      th:nth-child(4), // Hide the 4th column header
+      td:nth-child(4) {  // Hide the 4th column data
+        display: none;
+      }
+
+      th:nth-child(5), // Hide the 5th column header
+      td:nth-child(5) {  // Hide the 5th column data
         display: none;
       }
     }
