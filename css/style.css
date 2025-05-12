@@ -675,12 +675,10 @@ img {
   resize: vertical;
 }
 
-/* Global font application */
 * {
   font-family: "Nunito Sans", sans-serif;
 }
 
-/* Optional:  Define specific weights/styles if needed */
 h1 {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -690,7 +688,6 @@ em {
   font-style: italic;
 }
 
-/* Example with specific italic and weight */
 .emphasized-text {
   font-family: "Nunito Sans", sans-serif;
   font-style: italic;
